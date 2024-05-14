@@ -39,7 +39,7 @@ export const registerUser = async (req: Request, res: Response) => {
       throw new Error('Datos no válidos, asegúrese de completarlos correctamente.');
     }
   } catch (error) {
-    return res.status(400).json({ message: `Error al crear el usuario: ${error}` });
+    return res.status(400).json({ message: `${error}` });
   }
 };
 
