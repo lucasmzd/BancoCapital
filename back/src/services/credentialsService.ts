@@ -1,10 +1,10 @@
 import CredentialsDto from "../dto/CredentialDto";
-import { Credentials } from "../entities/Credential";
+import { Credential } from "../entities/Credential";
 import { CredentialsRepository } from "../Repositories/CredentialRepository";
 // import { UserRepository } from "../Repositories/UserRepository";
 
 
-export const createCredentialsService= async (createCredentialDto: CredentialsDto):Promise<Credentials>=>{
+export const createCredentialsService= async (createCredentialDto: CredentialsDto):Promise<Credential>=>{
   const newCredential= CredentialsRepository.create(createCredentialDto)
   await CredentialsRepository.save(newCredential)
   return newCredential
