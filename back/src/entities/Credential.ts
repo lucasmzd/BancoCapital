@@ -3,7 +3,7 @@ import { User } from "./User";
 
 @Entity({ name: "credentials"})
     
-export class Credentials{
+export class Credential{
         
     @PrimaryGeneratedColumn()
     id: number;
