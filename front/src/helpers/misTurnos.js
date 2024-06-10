@@ -4,7 +4,8 @@ const misTurnos = [
         date: "2024-03-01",
         time: "09:00:00",
         user: 1,
-        status: "active"
+        status: "active",
+        description: "Consulta"
     },
     {
         id: 2,

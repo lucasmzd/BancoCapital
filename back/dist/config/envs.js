@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DB_NAME = exports.DB_PASSWORD = exports.DB_USER = exports.DB_PORT = exports.DB_HOST = exports.PORT = void 0;
+require("dotenv/config");
+exports.PORT = Number(process.env.PORT) || 3000;
+exports.DB_HOST = process.env.DB_HOST || "localhost";
+exports.DB_PORT = process.env.DB_PORT || 5432;
+exports.DB_USER = process.env.DB_USER || "postgres";
+exports.DB_PASSWORD = process.env.DB_PASSWORD || "qwerty12345";
+exports.DB_NAME = process.env.DB_NAME || "m3db";

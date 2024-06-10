@@ -8,14 +8,15 @@ export default function NavBar() {
             </div>
             <div>
                 <a href="#">Home</a>
+                <a href="#">Mis Turnos</a>
                 <a href="#">About Us</a>
-            </div>
-            <div>
-                <button>Profile Picture</button>
             </div>
             <div>
                 <input type="text" placeholder="Search..."/>
                 <button>Search</button>
+            </div>
+            <div>
+                <button>Profile Picture</button>
             </div>
         </div>
     )
