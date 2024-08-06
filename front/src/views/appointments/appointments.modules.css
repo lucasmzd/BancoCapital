@@ -1,0 +1,16 @@
+h2{
+    color: red;
+}
+
+#cartita{
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    div{
+        background-color: green;
+        margin: 8px;
+
+    }
+}

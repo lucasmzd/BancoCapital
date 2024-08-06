@@ -1,0 +1,11 @@
+body{
+    background-color: #323232;
+    ;
+    h1 {
+        margin: 0 0 12px 0;
+        padding: 23px;
+        text-align: center;
+        color: white;
+        background-color: #4db86b;
+    }
+}
