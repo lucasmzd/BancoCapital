@@ -34,7 +34,10 @@ export const registerUser = async (req: Request, res: Response) => {
       typeof password === 'string'
     ) {
       const newUser = await registerUserService({ name, email, birthdate, nDni, username, password });
-      return res.status(201).json(newUser);
+      return res.status(201).json({
+        message: 'Usuario registrado exitosamente',
+        newUser
+      });
     } else {
       throw new Error('Datos no válidos, asegúrese de completarlos correctamente.');
     }
