@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import CardAppointment from '../../components/CardAppointment/CardAppointment';
+import styles from './appointments.module.css'
 
 const GETAPPOINTMENTS_URL = "http://localhost:3000/appointments"
 
@@ -16,7 +17,8 @@ export default function Appointments() {
   }, []);
 
     return (
-        <div>
+        <div className={styles.centerContainer}>
+          <h2>Mis Turnos:</h2>
           {
             appointments.map(appointment => (
               <CardAppointment

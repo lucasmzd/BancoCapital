@@ -1,5 +1,6 @@
-h2{
-    color: red;
+.centerContainer {
+    width: 70vw;
+    margin: auto;
 }
 
 #cartita{

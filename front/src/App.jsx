@@ -1,6 +1,7 @@
 import {Route, Routes, useLocation} from 'react-router-dom'
 import styles from './App.module.css'
 import NavBar from './components/NavBar/NavBar'
+import EmptyNavBar from './components/EmptyNavBar/EmptyNavBar'
 import Landing from './views/Landing/Landing'
 import Home from './views/Home/Home'
 import Appointments from './views/appointments/appointments'
@@ -12,11 +13,11 @@ import ErrorPage from './views/ErrorPage/ErrorPage'
 function App() {
 
   const {pathname} = useLocation()
-  const hideNavBarRoutes = ['/', '/login', '/register'];
+  const emptyNavBarRoutes = ['/', '/login', '/register'];
 
   return (
     <>
-      {!hideNavBarRoutes.includes(pathname) && <NavBar />}
+      {emptyNavBarRoutes.includes(pathname) ? <EmptyNavBar /> : <NavBar />}
       <div className={styles.centerContainer}>
         <Routes>
           <Route path="/" element={<Landing />}/>

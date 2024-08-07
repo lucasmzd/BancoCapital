@@ -16,24 +16,6 @@
     height: 70px;
 }
 
-.linkSection {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 2em;
-    color: #1c5498;
-}
-
-.linkSection a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.linkSection a:hover {
-    color: grey;
-    cursor: pointer;
-}
-
 .rightSection {
     display: flex;
     align-items: center;
@@ -58,7 +40,7 @@
     height: 50px;
 }
 
-/* .dropdownMenu {
+.dropdownMenu {
     position: absolute;
     top: 100%;
     right: 0;
@@ -81,4 +63,4 @@
 
 .dropdownItem:hover {
     background-color: #f1f1f1;
-} */
+}

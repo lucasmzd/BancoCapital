@@ -1,8 +1,9 @@
-import NavBar from '../../components/NavBar/NavBar'
+import React from 'react'
+import styles from './Home.module.css'
 export default function Home() {
     return (
       <>
-        <div>
+        <div className={styles.centerContainer}>
           <h1>Estamos en Home</h1>
         </div>
       </>

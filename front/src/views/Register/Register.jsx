@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import validateUser from "../../helpers/validateUser";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import styles from "./Register.module.css";
 
 const POSTUSER_URL = "http://localhost:3000/users/register"
 
@@ -66,27 +67,29 @@ function Register () {
     ]
 
     return (
-        <div>
-            <h2>Register</h2>
-            <form onSubmit={handleSubmit}>
-                {formData.map(({label, name, type}) => (
-                    <div key={name}>
-                        <label htmlFor={name}>{label}</label>
-                        <input
-                            id={name}
-                            name={name}
-                            type={type}
-                            value={user[name]}
-                            placeholder={`Ingresar ${label.toLocaleLowerCase()}`}
-                            onChange={handleChange}/>
-                        {errors[name] && (
-                            <span>{errors[name]}</span>
-                        )}
-                    </div>
-                ))}
-                <button type="submit" disabled={Object.keys(user).some(e => !user[e])}>Registrar</button>
-                <button type="reset" onClick={handleReset}>Limpiar</button>
-            </form>
+        <div className={styles.centerContainer}>
+            <div className={styles.formContainer}>
+                <h2>Register</h2>
+                <form onSubmit={handleSubmit}>
+                    {formData.map(({label, name, type}) => (
+                        <div key={name}>
+                            <label htmlFor={name}>{label}</label>
+                            <input
+                                id={name}
+                                name={name}
+                                type={type}
+                                value={user[name]}
+                                placeholder={`Ingresar ${label.toLocaleLowerCase()}`}
+                                onChange={handleChange}/>
+                            {errors[name] && (
+                                <span>{errors[name]}</span>
+                            )}
+                        </div>
+                    ))}
+                    <button type="submit" disabled={Object.keys(user).some(e => !user[e])}>Registrar</button>
+                    <button type="reset" onClick={handleReset}>Limpiar</button>
+                </form>
+            </div>
         </div>
     )
 }
