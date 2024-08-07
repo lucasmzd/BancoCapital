@@ -26,6 +26,7 @@ export default function Appointments() {
                id={appointment.id}
                date={appointment.date}
                time={appointment.time}
+               description={appointment.description}
                status={appointment.status}/>
             ))
           }
