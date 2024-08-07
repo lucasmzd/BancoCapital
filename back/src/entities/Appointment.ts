@@ -1,9 +1,9 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./User";
 
-@Entity({ name: "appointments"})
+@Entity({ name: "appointments" })
 export class Appointment {
-    
+  
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -16,9 +16,12 @@ export class Appointment {
   @Column()
   status: "active" | "cancelled";
 
-  @ManyToOne(()=> User, (user)=> user.appointments)
+  @Column({ type: 'text' })
+  description: string;
+
+  @ManyToOne(() => User, (user) => user.appointments)
   user: User["id"];
+}
   // @JoinColumn({ name: "userId" })
   //       userId: User;
-}
 

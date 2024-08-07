@@ -26,16 +26,17 @@ export const getAppointmentById = async (req: Request,res: Response):Promise<App
 
 export const appointmentSchedule = async(req: Request, res: Response): Promise<Appointment|void> => {
   try {
-      const { date, time, userId } = req.body;
+      const { date, time, description, userId } = req.body;
       if (!userId) {
           throw Error("Es necesario el ID del usuario para crear un turno.");
       }
-      if ( typeof date !== "string" || typeof time !== "string" || typeof userId !== "number") {
+      if ( typeof date !== "string" || typeof time !== "string" || typeof description !== "string" || typeof userId !== "number") {
           throw Error("Los datos son incorrectos.");
       }
       const newAppointmentData: AppointmentDto = {
           date: date,
           time: time,
+          description: description,
           userId: userId
       };
       const newAppointment = await appointmentScheduleService (newAppointmentData);
