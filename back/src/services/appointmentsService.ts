@@ -3,7 +3,7 @@ import { Appointment } from "../entities/Appointment";
 import { AppointmentRepository } from "../Repositories/AppointmentRepository";
 import { UserRepository } from "../Repositories/UserRepository";
 
-export const getAllAppointmentsService = async ():Promise<Appointment[]> => {
+export const getAllAppointmentsService = async (): Promise<Appointment[]> => {
   const appointments = await AppointmentRepository.find();
   if (appointments.length === 0) {
     throw new Error("No hay turnos disponibles.");
@@ -19,7 +19,9 @@ export const getAppointmentByIdService = async (id: number) => {
   return foundAppointment;
 };
 
-export const appointmentScheduleService = async (createTurn: AppointmentDto):Promise<Appointment|Error> => {
+export const appointmentScheduleService = async (
+  createTurn: AppointmentDto
+): Promise<Appointment | Error> => {
   const userExist = await UserRepository.findOneBy({ id: createTurn.userId });
   if (!userExist) {
     throw Error("El usuario no fue encontrado.");
@@ -34,12 +36,14 @@ export const appointmentScheduleService = async (createTurn: AppointmentDto):Pro
   return newDate;
 };
 
-export const appointmentCancelService = async (id: number):Promise<Appointment|null> => {
+export const appointmentCancelService = async (
+  id: number
+): Promise<Appointment | null> => {
   const appointment = await AppointmentRepository.findOneBy({ id });
-  if (appointment===null) {
+  if (appointment === null) {
     throw new Error("El turno solicitado para cancelar no fue encontrado.");
   }
   appointment.status = "cancelled";
-    await AppointmentRepository.save(appointment);
+  await AppointmentRepository.save(appointment);
   return appointment;
 };

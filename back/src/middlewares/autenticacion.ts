@@ -10,7 +10,7 @@
 //     try {
 //         const user = await getUserByIdService(parseInt(id));
 //         if (user && user.id.toString() === userIdHeader) {
-//             next(); // El usuario está autorizado, continuar con el siguiente middleware
+//             next();
 //         } else {
 //             res.status(401).json({ message: "ERROR. No estás autorizado" });
 //         }
