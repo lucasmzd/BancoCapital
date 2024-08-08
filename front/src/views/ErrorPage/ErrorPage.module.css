@@ -1,4 +1,24 @@
 .centerContainer {
-    width: 70vw;
-    margin: auto;
+  padding: 10px 0;
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.centerContainer h1 {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.centerContainer h2 {
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
 }

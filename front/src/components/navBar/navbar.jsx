@@ -6,27 +6,30 @@ import avatar from "../../assets/avatar.png";
 import { useSelector } from "react-redux";
 
 export default function NavBar() {
-    const [dropdownVisible, setDropdownVisible] = useState(false);
-    
-    const login = useSelector(state => state.actualUser.userData.login);
-    const toggleDropdown = () => {
-    setDropdownVisible(!dropdownVisible);
-  };
-  
+  const login = useSelector((state) => state.actualUser.userData.login);
+
   return (
     <div className={styles.navContainer}>
       <div className={styles.logoSection}>
         <img src={logo} alt="Banco Capital Logo" />
       </div>
       <div className={styles.linkSection}>
-        <Link to="/home" className={styles.navLink}>HOME</Link>
+        <Link to="/home" className={styles.navLink}>
+          HOME
+        </Link>
         {login && (
           <>
-            <Link to="/appointments" className={styles.navLink}>TURNO</Link>
-            <Link to="/appointments/schedule" className={styles.navLink}>NUEVO TURNO</Link>
+            <Link to="/appointments" className={styles.navLink}>
+              TURNO
+            </Link>
+            <Link to="/appointments/schedule" className={styles.navLink}>
+              NUEVO TURNO
+            </Link>
           </>
         )}
-        <Link to="/about" className={styles.navLink}>NOSOTROS</Link>
+        <Link to="/about" className={styles.navLink}>
+          NOSOTROS
+        </Link>
       </div>
       <div className={styles.rightSection}>
         <div className={styles.searchContainer}>
@@ -34,20 +37,9 @@ export default function NavBar() {
           <button className={styles.searchButton}>Search</button>
         </div>
         <div className={styles.avatarSection}>
-                <img src={avatar} alt="Avatar" />
+          <img src={avatar} alt="Avatar" />
         </div>
       </div>
     </div>
   );
 }
-
-
-{/* <div className={styles.avatarSection} onClick={toggleDropdown}>
-  <img src={avatar} alt="Avatar" className={styles.avatar} />
-  {dropdownVisible && (
-      <div className={styles.dropdownMenu}>
-      <Link to="/register" className={styles.dropdownItem}>Registrarse</Link>
-      <Link to="/login" className={styles.dropdownItem}>Loguearse</Link>
-    </div>
-  )}
-</div> */}

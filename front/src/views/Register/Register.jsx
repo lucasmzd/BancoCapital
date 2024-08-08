@@ -4,94 +4,103 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styles from "./Register.module.css";
 
-const POSTUSER_URL = "http://localhost:3000/users/register"
+const POSTUSER_URL = "http://localhost:3000/users/register";
 
-function Register () {
+function Register() {
+  const initialState = {
+    name: "",
+    email: "",
+    birthdate: "",
+    nDni: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+  };
 
-    const initialState= {
-        name: "",
-        email: "",
-        birthdate: "",
-        nDni: "",
-        username: "",
-        password: "",
-        confirmPassword: "",
-    }
+  const [user, setUser] = useState(initialState);
+  const [errors, setErrors] = useState(initialState);
 
-    const [user, setUser] = useState(initialState);
-    const [errors, setErrors] = useState(initialState);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({ ...user, [name]: value });
+    setErrors(validateUser({ ...user, [name]: value }));
+  };
 
-    const handleChange = (event) => {
-        const { name, value} = event.target;
-        setUser({...user, [name]: value});
-        setErrors(validateUser({...user, [name]: value}));
+  const handleReset = (event) => {
+    event.preventDefault();
+    setUser(initialState);
+  };
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const userData = {
+      name: user.name,
+      email: user.email,
+      birthdate: user.birthdate,
+      nDni: Number(user.nDni),
+      username: user.username,
+      password: user.password,
     };
-
-    const handleReset = (event) => {
-        event.preventDefault();
+    axios
+      .post(POSTUSER_URL, userData)
+      .then(({ data }) => {
+        alert(data.message);
         setUser(initialState);
-    };
+        navigate("/login");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
 
-    const navigate = useNavigate();
+  const formData = [
+    { label: "Nombre: ", name: "name", type: "text" },
+    { label: "Username: ", name: "username", type: "text" },
+    { label: "Password: ", name: "password", type: "password" },
+    {
+      label: "Confirmar Password: ",
+      name: "confirmPassword",
+      type: "password",
+    },
+    { label: "Email: ", name: "email", type: "text" },
+    { label: "Birthdate: ", name: "birthdate", type: "date" },
+    { label: "Numero DNI: ", name: "nDni", type: "text" },
+  ];
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const userData = {
-            name: user.name,
-            email: user.email,
-            birthdate: user.birthdate,
-            nDni: Number(user.nDni),
-            username: user.username,
-            password: user.password,
-        }
-        axios
-            .post(POSTUSER_URL, userData)
-            .then(({data}) => {
-                alert(data.message);
-                setUser(initialState)
-                navigate("/login")
-            })
-            .catch((error) => {
-                alert(error.message)
-            })
-    };
-
-    const formData = [
-        { label: "Nombre: ", name: "name", type: "text"},
-        { label: "Username: ", name: "username", type: "text"},
-        { label: "Password: ", name: "password", type: "password"},
-        { label: "Confirmar Password: ", name: "confirmPassword", type: "password"},
-        { label: "Email: ", name: "email", type: "text"},
-        { label: "Birthdate: ", name: "birthdate", type: "date"},
-        { label: "Numero DNI: ", name: "nDni", type: "text"},
-    ]
-
-    return (
-        <div className={styles.centerContainer}>
-            <div className={styles.formContainer}>
-                <h2>Register</h2>
-                <form onSubmit={handleSubmit}>
-                    {formData.map(({label, name, type}) => (
-                        <div key={name}>
-                            <label htmlFor={name}>{label}</label>
-                            <input
-                                id={name}
-                                name={name}
-                                type={type}
-                                value={user[name]}
-                                placeholder={`Ingresar ${label.toLocaleLowerCase()}`}
-                                onChange={handleChange}/>
-                            {errors[name] && (
-                                <span>{errors[name]}</span>
-                            )}
-                        </div>
-                    ))}
-                    <button type="submit" disabled={Object.keys(user).some(e => !user[e])}>Registrar</button>
-                    <button type="reset" onClick={handleReset}>Limpiar</button>
-                </form>
+  return (
+    <div className={styles.centerContainer}>
+      <div className={styles.formContainer}>
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          {formData.map(({ label, name, type }) => (
+            <div key={name}>
+              <label htmlFor={name}>{label}</label>
+              <input
+                id={name}
+                name={name}
+                type={type}
+                value={user[name]}
+                placeholder={`Ingresar ${label.toLocaleLowerCase()}`}
+                onChange={handleChange}
+              />
+              {errors[name] && <span>{errors[name]}</span>}
             </div>
-        </div>
-    )
+          ))}
+          <button
+            type="submit"
+            disabled={Object.keys(user).some((e) => !user[e])}
+          >
+            Registrar
+          </button>
+          <button type="reset" onClick={handleReset}>
+            Limpiar
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
-export default Register
+export default Register;

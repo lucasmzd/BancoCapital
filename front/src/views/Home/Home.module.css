@@ -1,4 +1,33 @@
 .centerContainer {
-    width: 70vw;
-    margin: auto;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 5px 10px 5px;
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.centerContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.centerContainer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.centerContainer p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.centerContainer p:last-child {
+  margin-bottom: 0;
 }

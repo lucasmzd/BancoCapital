@@ -1,4 +1,45 @@
 .centerContainer {
-    width: 70vw;
-    margin: auto;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 0;
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 39vh;
+  text-align: center;
+}
+
+.centerContainer h1 {
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.centerContainer h2 {
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.centerContainer button {
+  padding: 10px;
+  background-color: #1c5498;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.centerContainer button:hover {
+  background-color: #1c5498;
+}
+
+.centerContainer a {
+  text-decoration: none;
 }

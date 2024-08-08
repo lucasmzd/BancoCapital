@@ -1,0 +1,75 @@
+.centerContainer {
+  padding: 10px 0;
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.formContainer {
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.formContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formContainer div {
+  margin-bottom: 15px;
+}
+
+.formContainer label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formContainer input,
+.formContainer select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.formContainer input:focus,
+.formContainer select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.formContainer span {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.formContainer button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.formContainer button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

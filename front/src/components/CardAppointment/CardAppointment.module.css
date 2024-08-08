@@ -1,26 +1,27 @@
 .cardContainer {
-    background-color: white;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
-    span {
-        flex: 0 0 25%;
-    }
+  font-family: Arial, sans-serif;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  span {
+    flex: 0 0 25%;
+  }
 }
 
-.active{
-    color: green;
-    &:hover {
-        color:white;
-        background-color: grey;
-        cursor: pointer;
-    }
+.active {
+  color: green;
+  &:hover {
+    color: white;
+    background-color: grey;
+    cursor: pointer;
+  }
 }
 
 .cancelled {
-    color: red;
+  color: red;
 }

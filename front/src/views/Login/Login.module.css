@@ -1,78 +1,77 @@
 .centerContainer {
-    padding: 10px 0 10px 0;
-    width: 70vw;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
+  font-family: Arial, sans-serif;
+  padding: 10px 0 10px 0;
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
 }
 
 .formContainer {
-    position: relative;
-    max-width: 430px;
-    width: 100%;
-    background: #fff;
-    padding: 34px;
-    border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    font-family: Arial, sans-serif;
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
 }
 
 .formContainer h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .formContainer div {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .formContainer label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .formContainer input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .formContainer input:focus {
-    border-color: #007BFF;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #1c5498;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .formContainer span {
-    color: #FF0000;
-    font-size: 12px;
-    margin-top: 5px;
-    display: block;
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
 }
 
 .formContainer button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #1c5498;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .formContainer button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .formContainer button[type="reset"] {
-    background-color: #6c757d;
+  background-color: #6c757d;
 }
-
-
