@@ -29,7 +29,7 @@ const validateUser = ({
      //Validacion de birthdate:
      if(!birthdate) errors.birthdate = 'La fecha de nacimiento es obligatoria.'
      else {
-        if (!dateRegex.test(birthdate)) errors.birthdate = 'La fecha de nacimiento debe estar en formato dd-mm-aaaa.';
+        if (!dateRegex.test(birthdate)) errors.birthdate = 'La fecha de nacimiento debe estar en formato yyyy-mm-dd.';
         const today =new Date();
         today.setHours(0,0,0,0);
         const birthdateDate = new Date(birthdate);

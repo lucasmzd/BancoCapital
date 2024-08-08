@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import logo from "../../assets/bancoCapital.png";
 import avatar from "../../assets/avatar.png";
+import { useSelector } from "react-redux";
 
 export default function NavBar() {
     const [dropdownVisible, setDropdownVisible] = useState(false);
     
+    const login = useSelector(state => state.actualUser.userData.login);
     const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
@@ -18,7 +20,12 @@ export default function NavBar() {
       </div>
       <div className={styles.linkSection}>
         <Link to="/home" className={styles.navLink}>HOME</Link>
-        <Link to="/appointments" className={styles.navLink}>TURNOS</Link>
+        {login && (
+          <>
+            <Link to="/appointments" className={styles.navLink}>TURNO</Link>
+            <Link to="/appointments/schedule" className={styles.navLink}>NUEVO TURNO</Link>
+          </>
+        )}
         <Link to="/about" className={styles.navLink}>NOSOTROS</Link>
       </div>
       <div className={styles.rightSection}>
